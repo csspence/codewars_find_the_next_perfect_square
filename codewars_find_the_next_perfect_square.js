@@ -12,7 +12,16 @@ findNextSquare(625) --> returns 676
 findNextSquare(114) --> returns -1 since 114 is not a perfect square
 */
 
-function findNextSquare(sq) {
-  // Return the next square if sq is a perfect square, -1 otherwise
-  return -1;
+const findNextSquare = (sq) => {
+  let current = sq + 1;
+  if(Math.sqrt(sq) !== Math.floor(Math.sqrt(sq))) {
+    return -1;
+  }
+  while(current) {
+    if(Math.sqrt(current) === Math.floor(Math.sqrt(current))) {
+      return current
+    } else {
+      current++;
+    }
+  }
 }
